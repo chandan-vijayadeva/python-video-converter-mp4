@@ -38,12 +38,12 @@ The sections below describe the necessary steps and provide three ways to instal
 
 1. Before installing FFmpeg, ensure that Homebrew formulae on the system are up to date:
 
-    brew update
+        brew update
 
 
 2. Upgrade outdated formulae by running:
 
-    brew upgrade
+        brew upgrade
 
 
 
@@ -51,7 +51,7 @@ The sections below describe the necessary steps and provide three ways to instal
 
 1. Install the latest version of FFmpeg available on Homebrew with the command below.
 
-    brew install ffmpeg
+        brew install ffmpeg
 
 Homebrew installs the tool and all the dependencies.
 
@@ -59,7 +59,7 @@ Homebrew installs the tool and all the dependencies.
 
 2. Wait for the installation to finish, then verify it by launching FFmpeg:
 
-    ffmpeg
+        ffmpeg
 
 
 If successfully installed, FFmpeg displays an overview of configuration options.
@@ -70,7 +70,7 @@ MacPorts is another popular package manager for macOS. If you do not have MacPor
 
 1. Install FFmpeg on MacPorts by typing the following command:
 
-    sudo port install ffmpeg
+        sudo port install ffmpeg
 
 2. When prompted, enter Y to proceed with the installation. MacPorts installs FFmpeg and its dependencies.
 
@@ -105,7 +105,7 @@ export PATH=$PATH:/Users/test/Local
 
 4. Test the installation by invoking FFmpeg from the terminal.
 
-    ffmpeg
+        ffmpeg
 
 # Python Setup
 

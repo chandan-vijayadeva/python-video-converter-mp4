@@ -10,6 +10,10 @@ Pri requisist:
 
 FFmpeg is an open-source command-line tool for audio and video file processing. It comprises a suite of programs and libraries for decoding, encoding, streaming, filtering, and playing various multimedia formats.
 
+FFmpeg supports a variety of video codecs including MPEG-1, MPEG-2, VP8, and H.264, which is currently the most popular video codec. It offers high-quality and efficient compression.
+
+FFmpeg also supports several audio codecs, including MP3, AAC, and PCM. For the best audio quality, we need to use a lossless codec such as PCM. However, lossless codecs result in much larger file sizes.
+
 There are three ways to setup ffmpeg:
   
 Option 1: Installing FFmpeg on Mac via Homebrew
@@ -118,7 +122,37 @@ Keep the default install location.
 Close and move installer to Trash.
 
 
-References:
+
+# Important commands:
+
+## Convert .mov to .mp4
+
+    ffmpeg -i demo.mov -vcodec h264 demo.mp4
+
+## Convert .avi to .mp4
+
+    ffmpeg -i input_filename.avi -c:v copy -c:a copy -y output_filename.mp4
+
+## Let’s use the ffmpeg command to convert a sample.mp4 video to AVI format using the H.264 codec:
+
+    ffmpeg -i input_filename.mp4 -c:v libx264 output_filename.avi
+
+## Let’s convert the sample.mp4 video to AVI format and convert the audio to PCM format:
+
+    ffmpeg -i input_filename.mp4 -c:v copy -c:a pcm_s16le output_filename.avi
+
+We’re using the -c:v option to specify the video codec, and output_filename.avi represents the output video file.
+
+The -c:v copy option copies the video stream without re-encoding it. The -c:a pcm_s16le option converts the audio stream to uncompressed PCM audio with 16-bit depth and little-endian byte order. This ensures the best audio quality possible.
+
+
+## Putting it all together, we can convert the input_filename.mp4 video file to AVI while converting audio and video codecs:
+
+    ffmpeg -i input_filename.mp4 -c:v libx264 -c:a pcm_s16le output.avi
+
+
+
+# References:
   
 -> docs.python.org
 
